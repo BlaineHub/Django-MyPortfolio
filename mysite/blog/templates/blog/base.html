@@ -1,95 +1,45 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blaine Web</title>
+    <link href='{% static "css/style.css" %}' rel="stylesheet" />
+    {# MEDIUM STYLE EDITOR#}
+    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css"
+      type="text/css"
+      media="screen"
+      charset="utf-8"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <h1><a href="{% url 'aboutsite' %}">Blaines PortFolio</a></h1>
+        <nav>
+          <a href="{% url 'about' %}">About Me</a>
+          <a href="{% url 'post_list' %}">Experience</a>
+          <a href="{% url 'post_list2' %}">Education</a>
+          <a href="https://www.linkedin.com/in/blaine-o-driscoll">LinkedIn</a>
+          <a href="https://github.com/BlaineHub">GitHub</a>
+        </nav>
+      </header>
+      {% block body %} {% endblock %}
+    </div>
 
-<!-- Alternative to Bootstrap 3 Glyphicons -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-{# MEDIUM STYLE EDITOR#}
-<script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
-
-{# Custom CSS#}
-<link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
-{# Fonts#}
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-light techfont">
-      <div class="container">
-              <div class="navbar-nav align-items-center">
-                  <a class="navbar-brand bigbrand" href="{% url 'aboutsite' %}">About</a>
-                <div class="navbar navbar-custom">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fa fa-bars" style="font-size:30px" aria-hidden="true"></i></span>
-                  </button>
-                </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <div class="navbar-nav">
-                
-                  <a class="nav-item nav-link" href="{% url 'about' %}">About Me</a>
-                  <a class="nav-item nav-link" href="{% url 'post_list' %}">Experience</a>
-                  <a class="nav-item nav-link" href="{% url 'post_list2' %}">Education</a>
-                <div class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Links</a>
-                    <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
-                      <a class="dropdown-item" href="https://www.linkedin.com/in/blaine-o-driscoll">LinkedIn</a>
-                      <a class="dropdown-item" href="https://github.com/BlaineHub">GitHub</a>
-                      <a class="dropdown-item" href="{% url 'game' %}">JavaScript Game (ConnectFour)</a>
-                      <a class="dropdown-item" href="https://blaine91.pythonanywhere.com/">Flask WordApp (PythonAnywhere)</a>
-                      <a class="dropdown-item" href=" https://blaines-automated-reporting.s3.eu-west-1.amazonaws.com/Automated_Reports.zip">Excel Portfolio (S3 Download)</a>
-                    </div>
-                </div>
-              </div>
-  
-            <div class="navbar-nav align-items-center ml-auto">
-                  {% if user.is_authenticated %}
-                <div class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Add 
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbar-dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'post_new' %}">Add Experience</a>
-                    <a class="dropdown-item" href="#">Add Education</a>
-                  </div>
-                </div>
-            </div>
-                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                  {% else %}
-                    <a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
-                      <span class="fa fa-user" aria-hidden="true"></span></a>
-                  {% endif %}
-        </div>
-      </div> 
-    </nav>
-
-
-    {# The actual blog posts#}
-          <div class="content container">
-              <div class="row">
-                  <div class="col-md-8">
-                    <div class="blog_posts">
-                      {% block body %}
-                      {% endblock %}
-
-                    </div>
-                  </div>
-              </div>
-          </div>
-
-    {# SCRIPTS#}
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -1,62 +1,59 @@
-{%extends 'blog/base.html'%}
-{% block body %}
-{% load static %}
+{%extends 'blog/base.html'%} {% block body %} {% load static %}
 <script
-src="https://code.jquery.com/jquery-3.6.0.js"
-integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-crossorigin="anonymous"></script>
-</head>
-<div class="container" align='center'>
-  <div class="container" align="center">
-    <h2>Welcome to connect four</h2>
-    <h3>Lets start!</h3>
-
-<table class="board">
-<tr>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-</tr>
-<tr>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-</tr>
-<tr>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-</tr>
-<tr>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-</tr>
-<tr>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-    <td><button type='button' name='button'></button></td>
-</tr>
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"
+></script>
+<div class="container" align="center">
+  <h2 style="font-size: 25px; margin-bottom: 2px">Welcome to connect four</h2>
+  <h3 style="font-size: 20px">Lets start!</h3>
+  <table class="board">
+    <tr>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+    </tr>
+    <tr>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+    </tr>
+    <tr>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+    </tr>
+    <tr>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+    </tr>
+    <tr>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+      <td><button type="button" name="button"></button></td>
+    </tr>
+  </table>
 </div>
 <script src="{% static 'js/Game.js' %}"></script>
-  {% endblock %}
+{% endblock %}

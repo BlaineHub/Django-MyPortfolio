@@ -1,14 +1,90 @@
-{%extends 'blog/base.html'%}
-{% block body %}
-<div class="centerstage">
-    {% for post in post_list %}
-    <div>
-        <h1 id="postlist"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h1>
-        <div class="date">
-            <p>Published on: {{post.published_date|date:'M Y'}}</p>
-        </div>
-        <a href="{%url 'post_detail' pk=post.pk %}">Comments: {{post.approve_comments.count}}</a>
-    </div>
-    {% endfor %}
+{%extends 'blog/base.html'%} {% block body %}
+<div class="container">
+  <h4>2014 - Present: Technical Support Engineer @ EFT Analytics</h4>
+  <p>
+    Supporting EFT Analytics software for several Fortune 500 companies across
+    the world. Helping them to improve their operational efficiency through
+    analytics and achieve ISO 50001 certification.
+  </p>
+  <p style="color: #2c4231">
+    <strong>Main Roles Include:</strong>
+  </p>
+  <ul>
+    <li>
+      Investigating data issues using SQL. Locating the point of failure and
+      resolving the issue, or documenting the issue and passing it to our Devs
+      team.
+    </li>
+    <li>
+      Investigating Infrastructure issues on a range of Linux/Windows servers on
+      Aws, resolving were possible or documenting the issue and passing it to
+      our Devs team.
+    </li>
+    <li>
+      Investigating data collection issues, from various different sources such
+      as mini-servers/Jace controllers and Modbus metering.
+    </li>
+    <li>
+      Giving clients advice on best practices of the system and leading training
+      sessions with them via team’s calls/on-site workshops.
+    </li>
+    <li>
+      Developing automated Excel templates to display client’s data and support
+      their projects.
+    </li>
+    <li>
+      Developing automated methods to export/import client’s data from/to our
+      databases integrating Python and SQL
+    </li>
+  </ul>
+  <br />
+  <h4>Sep 2014 - Dec 2014: Labratory Tutor/Demonstrator @ DIT</h4>
+  <p>Part Time Work - Tutoring in the Physics Laboratory,</p>
+  <p style="color: #2c4231">
+    <strong>Main Roles Include:</strong>
+  </p>
+  <ul>
+    <li>Provided tutorials of experiments to be conducted by students.</li>
+    <li>
+      Supervised students carrying out practical work and assisted them to help
+      them acquire a full understanding of the scientific principles underlying
+      their practical work.
+    </li>
+    <li>
+      Carried out assessments on examination work and provide constructive
+      feedback to students.
+    </li>
+    <li>Ensuring compliance with Health and Safety requirements.</li>
+  </ul>
+  <br />
+  <h4>Feb 2013 - Sep 2013: Quality Systems/Manufacturing Engineer @ BSCI</h4>
+  <p>Completed a 7 Month Internship as part of my Degree.</p>
+  <p style="color: #2c4231">
+    <strong>Main Roles Include:</strong>
+  </p>
+  <ul>
+    <li>Carried out Good Manufacturing Practices training.</li>
+    <li>
+      Conducted Line Audits, ensuring that Standard Operating Procedures and Job
+      Element Scripts are being adhered to in the lead up to an FDA Audit.
+    </li>
+    <li>
+      Use of P.D.M electronic system to track Change Requests (Controls) and
+      ensure correct approvers were assigned to each request.
+    </li>
+    <li>
+      Tracking Non-Conformances as per procedure and raising further
+      investigations for example CAPA’s (Corrective Action Preventive Action)
+      when appropriate.
+    </li>
+    <li>
+      Worked on Lean & Six Sigma based projects to come up with faster
+      processing parameters.
+    </li>
+    <li>
+      Received “On Spot Reward” in recognition of my continuous commitment and
+      execution of tasks assigned in a professional and efficient manner.
+    </li>
+  </ul>
 </div>
 {% endblock %}

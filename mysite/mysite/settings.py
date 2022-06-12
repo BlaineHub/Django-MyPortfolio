@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-xt2&6_&(ir_54+wjqqc3dc13rm34n#hqcmv=i(c-s!k_)w!)&_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djenv-portfolio.eba-xemznzbb.eu-west-1.elasticbeanstalk.com','blaineweb.link','www.blaineweb.link','127.0.0.1']
+ALLOWED_HOSTS = ['djenv-project.eba-atahpmvh.eu-west-1.elasticbeanstalk.com','blaineweb.link','www.blaineweb.link','127.0.0.1']
 
 
 # Application definition
@@ -77,12 +78,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
         'USER': '',
         'PASSWORD': '',
-        'HOST': 'blogdb.cmugpmb5tbfm.us-east-1.rds.amazonaws.com',
-        'PORT': 3306
+        'HOST': '',
+        'PORT': ''
     }
 }
 
@@ -121,9 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
-
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
